@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-# http://www.sublimetext.com/docs/syntax.html
+# http://www.sublimetext.com/docs/3/syntax.html
 name: TypeSpec
 file_extensions:
   - tsp
@@ -334,7 +334,7 @@ contexts:
           pop: true
         - include: statement
   namespace-name:
-    - match: '(?=([_$[:alpha:]]|`))'
+    - match: "(?=([_$[:alpha:]]|`))"
       push:
         - meta_scope: meta.namespace-name.typespec
         - match: '((?=\{)|(?=,|;|@|\)|\}|\b(?:extern)\b|\b(?:namespace|model|op|using|import|enum|alias|union|interface|dec|fn)\b))'
@@ -422,7 +422,7 @@ contexts:
         - include: token
         - include: operation-signature
   operator-assignment:
-    - match: '='
+    - match: "="
       scope: keyword.operator.assignment.tsp
   parenthesized-expression:
     - match: \(
@@ -440,7 +440,7 @@ contexts:
     - match: \.
       scope: punctuation.accessor.tsp
   punctuation-comma:
-    - match: ','
+    - match: ","
       scope: punctuation.comma.tsp
   punctuation-semicolon:
     - match: ;
@@ -609,7 +609,7 @@ contexts:
         0: punctuation.definition.typeparameters.begin.tsp
       push:
         - meta_scope: meta.type-arguments.typespec
-        - match: '>'
+        - match: ">"
           captures:
             0: punctuation.definition.typeparameters.end.tsp
           pop: true
@@ -637,7 +637,7 @@ contexts:
           pop: true
         - include: expression
   type-parameter-default:
-    - match: '='
+    - match: "="
       captures:
         0: keyword.operator.assignment.tsp
       push:
@@ -651,7 +651,7 @@ contexts:
         0: punctuation.definition.typeparameters.begin.tsp
       push:
         - meta_scope: meta.type-parameters.typespec
-        - match: '>'
+        - match: ">"
           captures:
             0: punctuation.definition.typeparameters.end.tsp
           pop: true
